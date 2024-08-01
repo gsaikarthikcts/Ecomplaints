@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id":2,
+      "title":"json-example",
+      "author":"myself"
+    },
+    {
+      "id":3,
+      "title":"json-example1234567",
+      "author":"hgftuyftftyu"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
