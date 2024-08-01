@@ -1,0 +1,91 @@
+.main {
+  text-align: center;
+  margin: 20px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  margin-bottom: 20px;
+  justify-content:flex-start;
+}
+
+.navigate{
+  cursor: pointer;
+}
+
+.navbar b{
+  display: left;
+  color: white;
+  padding: 14px 16px;
+  font-size: 16px;
+}
+
+.navbar b:hover {
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+form {
+  border-radius: 30px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 8px;
+  border: 2px solid #ccc;
+  border-radius: 40px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin-bottom: 8px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: green;
+}
+
+.text-danger {
+  color: red;
+  font-size: 9px;
+}
+
+input.ng-invalid.ng-touched {
+  border: red 1px solid;
+}
+
+p {
+  padding-top: 20px;
+  font-size: 9px;
+}
+
+@media (max-width: 600px) {
+  form {
+    max-width: 100%;
+    padding: 10px;
+  }
+}

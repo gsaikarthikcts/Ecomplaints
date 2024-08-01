@@ -1,0 +1,24 @@
+<div class="navbar">
+  <b (click)="home()">E-Complaints</b>
+</div>
+<div class="main">
+  <h1><b>Admin Login</b></h1>
+  <p>Authorized Personnel Login: <a class="Restricted">Access Restricted Area.</a> Please enter your<br>credentials to log in as an authorized user and gain access to restricted features and content.</p>
+  <form [formGroup]="termsForm">
+    <div>
+      <label>User Name</label>
+      <input placeholder="Enter Admin Username" type="text" formControlName="username">
+      <span class="text-danger" *ngIf="termsForm.get('username')?.hasError('required') && termsForm.get('username')?.touched">UserName is required</span><br/>
+      <span class="text-danger" *ngIf="termsForm.get('username')?.hasError('minlength') && termsForm.get('username')?.touched">Minimum of 6 Characters for Name</span><br/>
+    </div>
+    
+    <div>
+      <label>Password</label>
+      <input placeholder="Enter Admin Password" type="password" formControlName="password">
+      <span class="text-danger" *ngIf="termsForm.get('password')?.hasError('required') && termsForm.get('password')?.touched">Password is required</span><br/>
+      <span class="text-danger" *ngIf="termsForm.get('password')?.hasError('minlength') && termsForm.get('password')?.touched">Minimum of 6 Characters for password</span><br/>
+    </div>
+    
+    <button type="submit" [disabled]="termsForm.invalid" (click)="adminlogin()">Login</button>
+  </form>
+</div>

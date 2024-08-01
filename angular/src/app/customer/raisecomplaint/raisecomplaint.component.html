@@ -1,0 +1,53 @@
+<div class="navbar">
+  <b (click)="home()">E-Complaints</b>
+  <div class="button-container">
+    <button class="button1" (click)="raise()">Raise Complaint</button>
+    <button class="button1" (click)="status()">Check Status</button>
+    <button class="button1" (click)="feedback()">Feedback</button>
+  </div>
+  <div class="logout-container" (click)="logout()">
+    <img height="20px" width="20px" src="../../../assets/images/logout.png">
+  </div>
+</div>
+
+<div class="section-heading">
+  <h2>Raise a Complaint</h2>
+</div>
+
+
+  <div class="body">
+    <div class="form-container">
+      <form [formGroup]="termsForm" method="post" action="/api/userDetails" *ngIf="submitclicked1">
+        <div class="input-container">
+          <label for="name">Name:</label>
+          <input type="text" id="name" placeholder="Enter Full Name" formControlName="name">
+        </div>
+        <div class="input-container">
+          <label for="phone">Phone:</label>
+          <input type="number" id="phone" placeholder="Enter Phone Number" formControlName="phonenumber">
+        </div>
+        <div class="input-container">
+          <label for="mail">Email:</label>
+          <input type="email" id="mail" placeholder="Enter Email id" formControlName="email">
+        </div>
+        <div class="input-container">
+          <label for="sub">Subject:</label>
+          <input type="text" id="sub" placeholder="Enter Subject of your Complaint" formControlName="subject">
+        </div>
+        <div class="input-container">
+          <label for="complaint">Complaint:</label>
+          <textarea id="complaint" placeholder="Write Your Complaint Here!" formControlName="complaint"></textarea>
+        </div>
+        
+        <button class="submitbutton" type="submit" [disabled]="termsForm.invalid" (click)="submit()" [ngClass]="{'valid-submit-button':termsForm.valid}">Submit</button>
+      </form>
+      <div class="output" *ngIf="submitclicked">
+        <h3>Complaint Raised Successfully.</h3>
+        <h2>Complaint id is:
+          <input disabled type="number" [value]="complaintid">
+        </h2>
+        <h3>Thankyou !!!</h3>
+        <button class="close-button" (click)="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>

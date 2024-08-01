@@ -1,0 +1,43 @@
+<div class="main">
+    <div class="navbar">
+      <b (click)="home()">E-Complaints</b>
+      <b (click)="logout()"><img height="20px" width="20px" src="../../../assets/images/logout.png"></b>
+    </div><br>
+    <div class="button-container">
+      <button (click)="setpriority()">Set the Priority of complaint</button>
+      <button (click)="setstatus()">Set the Status of complaint</button>
+      <button (click)="cfeedback()">Check the Feedbacks</button>
+    </div>
+    <h2>Set the Priority (Low/Medium/High) of the complaint Raised</h2>
+    <div class="table-container" *ngIf="userDetails && userDetails.length > 0">
+      <table class="table table-striped-columns">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Complaint ID</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Complaint</th>
+            <th>Set Priority (Low/Medium/High)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let priority of userDetails">
+            <td>{{ priority.name }}</td>
+            <td>{{ priority.phonenumber }}</td>
+            <td>{{ priority.complaintid }}</td>
+            <td>{{ priority.email }}</td>
+            <td>{{ priority.subject }}</td>
+            <td>{{ priority.complaint }}</td>
+            <td>
+              <div>
+                <input type="text" class="form-controm" [(ngModel)]="priority.priority">
+                <button value="submit" (click)="sub()">Submit</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

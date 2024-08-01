@@ -1,0 +1,26 @@
+<div class="navbar">
+  <b (click)="home()">E-Complaints</b>
+</div>
+<div class="main">
+    <h1><b>Customer Login</b></h1>
+    <p>Welcome! Please enter your credentials to log in and access your account.</p>
+    <form [formGroup]="termsForm">
+      <div>
+        <label>User Name</label>
+        <input placeholder="Enter Customer Username" type="text" formControlName="firstname">
+        <span class="text-danger" *ngIf="termsForm.get('firstname')?.hasError('required') && termsForm.get('firstname')?.touched">UserName is required</span><br/>
+        <span class="text-danger" *ngIf="termsForm.get('firstname')?.hasError('minlength') && termsForm.get('firstname')?.touched">Minimum of 6 Characters for Name</span><br/>
+      </div>
+      
+      <div>
+        <label>Password</label>
+        <input placeholder="Enter Customer Password" type="password" formControlName="password">
+        <span class="text-danger" *ngIf="termsForm.get('password')?.hasError('required') && termsForm.get('password')?.touched">Password is required to login</span><br/>
+        <span class="text-danger" *ngIf="termsForm.get('password')?.hasError('minlength') && termsForm.get('password')?.touched">Minimum of 6 Characters for password</span><br/>
+      </div>
+      
+      <button type="button" [disabled]="termsForm.invalid" (click)="customerlogin()">Login</button>
+      <p>New User? Register Now and Get Started! Create an account to unlock all the features and benefits.
+        <a class="navigate" (click)="register()">Click Here To Register...</a> </p>
+    </form>
+  </div>

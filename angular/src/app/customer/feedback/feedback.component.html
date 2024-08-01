@@ -1,0 +1,27 @@
+<div class="navbar">
+  <b (click)="home()">E-Complaints</b>
+  <div class="button-container">
+    <button class="button1" (click)="raise()">Raise Complaint</button>
+    <button class="button1" (click)="status()">Check Status</button>
+    <button class="button1" (click)="feedback()">Feedback</button>
+  </div>
+  <div class="logout-container" (click)="logout()">
+    <img height="20px" width="20px" src="../../../assets/images/logout.png">
+  </div>
+</div>
+
+<div class="section-heading">
+  <h2>Provide Your Feedback!</h2>
+  </div>
+  <div class="form-container">
+    <form [formGroup]="termsForm">
+      <div class="input-container">
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" rows="5" cols="50" placeholder="Provide Your Valuable Feedback Here:" formControlName="feedback"></textarea>
+      </div>
+      <button class="submitbutton" type="submit" [disabled]="termsForm.invalid" (click)="submitfeedback()">Submit</button>
+      <div class="output" *ngIf="submitclicked">
+        <h2>Feedback Submitted Successfully. Thank You!</h2>
+      </div>
+    </form>
+  </div>
